@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+}
+
+#wrapper {
+    display: grid;
+    height: 200vh;
+    width: 100%;
+
+    grid-template-areas:
+    "hd hd hd hd hd hd"
+    "nv nv nv nv nv nv"
+    "a1 mn mn mn a2 a2"
+    "a1 mn mn mn a2 a2"
+    "ft ft ft ft ft ft"
+    ;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 30% auto 25% 50% 20%;
+}
+
+/* Hem-sidan --------------------------------------------------------------- */
+
+header {
+    grid-area: hd;
+    background: url("../img/bil.jpg");
+    background-size: cover;
+    background-position-y: 94%;
+    background-repeat: no-repeat;
+}
+
+nav {
+    grid-area: nv;
+}
+
+nav > ul {
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+nav > ul > li {
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+
+nav > ul > li > * {
+    /*box-sizing: border-box;
+    display: flex;
+    flex: 1;
+
+    padding: 30%;
+    color: whitesmoke;
+    text-decoration: none; */
+
+    display: inline-block;
+    padding: 0 12px;
+    white-space: nowrap;
+    color: whitesmoke;
+    text-decoration: none;
+
+}
+
+nav > ul > li > *:hover {
+    background: rgb(66, 66, 66);
+}
+
+#a1 {
+    grid-area: a1;
+    background-color: slateblue;
+}
+
+#a2 {
+    grid-area: a2;
+    background-color: whitesmoke;
+}
+
+main {
+    grid-area: mn;
+    background-color: whitesmoke;
+} 
+
+footer {
+    grid-area: ft;
+    background-color: black;
+}
