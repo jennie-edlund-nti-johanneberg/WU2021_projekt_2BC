@@ -2,76 +2,21 @@
     margin: 0;
 }
 
-#wrapper {
-    display: grid;
-    height: 200vh;
-    width: 100%;
-
-    grid-template-areas:
-    "hd hd hd hd hd hd"
-    "nv nv nv nv nv nv"
-    "a1 mn mn mn a2 a2"
-    "a1 mn mn mn a2 a2"
-    "ft ft ft ft ft ft"
-    ;
-
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 30% auto 25% 50% 20%;
+html {
+    scroll-padding-top: 45px
 }
-
-/* Hem-sidan --------------------------------------------------------------- */
 
 header {
     grid-area: hd;
-    background: url("../img/bil.jpg");
+    background: url("../img/tyg.jpg");
     background-size: cover;
     background-position-y: 94%;
     background-repeat: no-repeat;
 }
 
-nav {
-    grid-area: nv;
-}
-
-nav > ul {
-    list-style: none;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-
-nav > ul > li {
-    display: flex;
-    align-items: center;
-    background-color: black;
-}
-
-
-nav > ul > li > * {
-    /*box-sizing: border-box;
-    display: flex;
-    flex: 1;
-
-    padding: 30%;
-    color: whitesmoke;
-    text-decoration: none; */
-
-    display: inline-block;
-    padding: 0 12px;
-    white-space: nowrap;
-    color: whitesmoke;
-    text-decoration: none;
-
-}
-
-nav > ul > li > *:hover {
-    background: rgb(66, 66, 66);
-}
-
 #a1 {
     grid-area: a1;
-    background-color: slateblue;
+    background-color: #7F52CD;
 }
 
 #a2 {
@@ -87,4 +32,185 @@ main {
 footer {
     grid-area: ft;
     background-color: black;
+    color: snow;
+}
+
+/* Storskräm --------------------------------------------------------------- */
+
+@media screen and (min-width: 1024px) {
+    #wrapper {
+        display: grid;
+        height: 100%;
+        width: 100%;
+    
+        grid-template-areas:
+        "hd hd hd hd hd hd"
+        "nv nv nv nv nv nv"
+        "a1 mn mn mn a2 a2"
+        "ft ft ft ft ft ft"
+        ;
+    
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 13% auto auto 10%;
+    }
+
+    nav {
+    grid-area: nv;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    }
+
+    nav > ul {
+        list-style: none;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    nav > ul > li {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
+    nav > ul > li > * {
+        display: inline-block;
+        padding: 15px 30px;
+        white-space: nowrap;
+        color: whitesmoke;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    nav > ul > li > *:hover {
+        background: rgb(66, 66, 66);
+    }
+
+    nav > ul > li > *:active {
+        background: rgb(36, 36, 36);
+    }
+
+    nav > ul > li > #active {
+        background-color: #7F52CD;
+    }
+
+    nav > ul > li > #active:hover {
+        background-color: rgb(135, 123, 207);
+    }
+    nav > ul > li > #active:active {
+        background-color: rgb(118, 107, 179);
+    }
+
+    .meny_knapp {
+        display: none;
+    }
+}
+
+/* Hem-sidan --------------------------------------------------------------- */
+
+/* Andra-sidan --------------------------------------------------------------- */
+
+
+/* Tredje-sidan --------------------------------------------------------------- */
+
+
+/* Fjärde-sidan --------------------------------------------------------------- */
+
+
+/* Femte-sidan --------------------------------------------------------------- */
+
+
+/* Litenskräm --------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+    #wrapper {
+        display: grid;
+        height: 100%;
+        width: 100%;
+    
+        grid-template-areas:
+        "hd hd"
+        "mb mb"
+        "mn mn"
+        "a2 a2"
+        "ft ft"
+        ;
+    
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 13% auto auto 10% 10%;
+    }
+
+    nav {
+        height: 100vh;
+        width: 50vh;
+        background: #7F52CD;
+        position: fixed;
+        top: 0;
+        left: -90vw;
+        transition: left 0.3s;
+        box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
+        z-index: 10;
+        margin: 0;
+    }
+
+    nav > ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        list-style: none;
+    }
+
+    nav > ul > li {
+        margin: 1% 0;
+    }
+
+    nav > ul > li > * {
+        box-sizing: border-box;
+        color: black;
+        text-decoration: none;
+        font-size: 150%;
+        margin: 30% 0;
+    }
+
+    .meny_knapp {
+        cursor: pointer;
+        display: inline;
+
+        color: whitesmoke;
+        background-color: black;
+
+        grid-area: mb;
+    }
+    
+    .meny_knapp i.material-icons {
+        font-size: 2.5rem;
+    }
+
+    .visa {
+        left: 0;
+    }
+    
+    .fade_layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.3);
+        display: none;
+        z-index: 5;
+    }
+    
+    .fade_layer.synlig {
+        display: block;
+    }
+
+    #a1 {
+        display: none;
+    }
+
 }
