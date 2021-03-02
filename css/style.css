@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 * {
     margin: 0;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 html {
@@ -10,18 +13,7 @@ header {
     grid-area: hd;
     background: url("../img/tyg.jpg");
     background-size: cover;
-    background-position-y: 94%;
     background-repeat: no-repeat;
-}
-
-#a1 {
-    grid-area: a1;
-    background-color: #7F52CD;
-}
-
-#a2 {
-    grid-area: a2;
-    background-color: whitesmoke;
 }
 
 main {
@@ -29,10 +21,26 @@ main {
     background-color: whitesmoke;
 } 
 
+main > * {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 5% 10%;
+}
+
 footer {
     grid-area: ft;
-    background-color: black;
-    color: snow;
+    background-color: #0f091a;
+    color: whitesmoke;;
+
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+footer > *{
+    margin: auto;
 }
 
 /* Storskräm --------------------------------------------------------------- */
@@ -51,14 +59,14 @@ footer {
         ;
     
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 13% auto auto 10%;
+        grid-template-rows: 6% auto auto 5%;
     }
 
     nav {
-    grid-area: nv;
-    background-color: black;
-    position: sticky;
-    top: 0;
+        grid-area: nv;
+        background-color: #0f091a;
+        position: sticky;
+        top: 0;
     }
 
     nav > ul {
@@ -107,6 +115,47 @@ footer {
     .meny_knapp {
         display: none;
     }
+
+    #a1 {
+        grid-area: a1;
+        background-color: #7F52CD;
+    }
+
+    #a1 > ul{
+        margin: 20% 7%;
+        list-style: none;
+    }
+
+    #a1 > ul > li {
+        margin: 5% 0;
+    }
+
+    #a1 > ul > li > * {
+        text-decoration: none;
+        color: whitesmoke;
+    }
+    #a1 > ul > li > *:hover {
+        text-decoration: none;
+        color: #af82fd;
+    }
+
+    
+    #a2 {
+        grid-area: a2;
+        background-color: whitesmoke;
+    }
+
+    #a2 > figure {
+        margin: 15%;
+        height: 10%;
+        width: 10%;
+    }
+    
+    #a2 > figure > img {
+        height: 50%;
+        width: auto;
+    
+    }
 }
 
 /* Hem-sidan --------------------------------------------------------------- */
@@ -134,64 +183,74 @@ footer {
         "hd hd"
         "mb mb"
         "mn mn"
-        "a2 a2"
         "ft ft"
         ;
     
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 13% auto auto 10% 10%;
+        grid-template-rows: 5% auto auto 7%;
     }
 
     nav {
         height: 100vh;
         width: 50vh;
-        background: #7F52CD;
+        background: whitesmoke;
         position: fixed;
+        right: none;
         top: 0;
-        left: -90vw;
-        transition: left 0.3s;
-        box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
+        right: -50vw;
+        transition: right 0.3s;
         z-index: 10;
         margin: 0;
     }
 
     nav > ul {
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
 
+        margin: 10% 0;
         list-style: none;
     }
 
-    nav > ul > li {
-        margin: 1% 0;
-    }
-
     nav > ul > li > * {
+        display: flex;
+        align-items: center;
         box-sizing: border-box;
-        color: black;
+        color: #7F52CD;
         text-decoration: none;
         font-size: 150%;
-        margin: 30% 0;
+        margin: 10% 10% 10% 0;
+        padding-bottom: 5%;
+        border-bottom: #7F52CD solid 1px;
+    }
+
+    nav > ul > li > *:hover {
+        color: black;
+        border-bottom: black solid 1px;
+    }
+
+    .visa {
+        right: 0;
     }
 
     .meny_knapp {
+        grid-area: mb;
+        position: sticky;
+        top: 0;
         cursor: pointer;
-        display: inline;
-
         color: whitesmoke;
         background-color: black;
+        padding: 0.7% 0;
 
-        grid-area: mb;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .meny_knapp > * {
+        margin-right: 1%;
     }
     
     .meny_knapp i.material-icons {
         font-size: 2.5rem;
-    }
-
-    .visa {
-        left: 0;
     }
     
     .fade_layer {
@@ -205,7 +264,7 @@ footer {
         z-index: 5;
     }
     
-    .fade_layer.synlig {
+    .synlig {
         display: block;
     }
 
@@ -213,4 +272,7 @@ footer {
         display: none;
     }
 
+    #a2 {
+        display: none;
+    }
 }
