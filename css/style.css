@@ -3,10 +3,11 @@
 * {
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
 }
 
 html {
-    scroll-padding-top: 45px
+    scroll-padding-top: 55px
 }
 
 header {
@@ -20,13 +21,6 @@ main {
     grid-area: mn;
     background-color: whitesmoke;
 } 
-
-main > * {
-    display: flex;
-    flex-wrap: wrap;
-
-    margin: 5% 10%;
-}
 
 footer {
     grid-area: ft;
@@ -59,7 +53,7 @@ footer > *{
         ;
     
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 6% auto auto 5%;
+        grid-template-rows: 35vh auto auto 30vh;
     }
 
     nav {
@@ -119,55 +113,119 @@ footer > *{
     #a1 {
         grid-area: a1;
         background-color: #7F52CD;
+
+        display: flex;
+        justify-content: center;
     }
 
-    #a1 > ul{
-        margin: 20% 7%;
+    #a1 > ul {
         list-style: none;
+        margin-top: 30%;
+        margin-right: 20px;
     }
 
     #a1 > ul > li {
-        margin: 5% 0;
+        margin: 30px 0;
     }
 
     #a1 > ul > li > * {
         text-decoration: none;
         color: whitesmoke;
+        line-height: 4px;
     }
+
     #a1 > ul > li > *:hover {
         text-decoration: none;
         color: #af82fd;
     }
 
-    
     #a2 {
         grid-area: a2;
         background-color: whitesmoke;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #a2 > figure {
-        margin: 15%;
-        height: 10%;
-        width: 10%;
+        height: 100%;
+        margin-top: 30%;
     }
     
     #a2 > figure > img {
-        height: 50%;
+        height: 5%;
         width: auto;
-    
     }
 }
 
 /* Hem-sidan --------------------------------------------------------------- */
+
+#hem_main > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3% 12% 3% 12%;
+}
+
+#hem_main > h1, #hem_main > h2 {
+    margin-top: 8%;
+}
 
 /* Andra-sidan --------------------------------------------------------------- */
 
 
 /* Tredje-sidan --------------------------------------------------------------- */
 
+#sida3_main > * {
+    margin: 10% 0% 10% 20%;
+}
+
+#sida3_main > figure >img {
+    height: 70%;
+    width: 70%;
+}
 
 /* Fjärde-sidan --------------------------------------------------------------- */
 
+#sida4_main {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-content: center;
+    justify-content: center;
+
+    padding: 14%;
+}
+
+#sida4_main > figure > {
+    justify-content: last baseline baseline;
+} 
+
+#sida4_main > figure > img {
+    height: 50%;
+    border: #af82fd solid 1px;
+    box-shadow: 0px 0px 4px grey;
+}
+
+#sida4_a2 {
+    grid-area: a2;
+    background-color: whitesmoke;
+    
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+}
+
+#sida4_a2 > h1 {
+    margin-top: 10%;
+}
+
+
+#sida4_a2 > * {
+    display: flex;
+
+    justify-content: flex-start;
+    margin: 4% 5% 0% 0%;
+}
 
 /* Femte-sidan --------------------------------------------------------------- */
 
@@ -214,7 +272,6 @@ footer > *{
     nav > ul > li > * {
         display: flex;
         align-items: center;
-        box-sizing: border-box;
         color: #7F52CD;
         text-decoration: none;
         font-size: 150%;
@@ -238,7 +295,7 @@ footer > *{
         top: 0;
         cursor: pointer;
         color: whitesmoke;
-        background-color: black;
+        background-color: #0f091a;
         padding: 0.7% 0;
 
         display: flex;
