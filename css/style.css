@@ -22,6 +22,14 @@ main {
     background-color: whitesmoke;
 } 
 
+.a2 {
+    grid-area: a2;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 footer {
     grid-area: ft;
     background-color: #0f091a;
@@ -56,42 +64,58 @@ footer > *{
         grid-template-rows: 35vh auto auto 30vh;
     }
 
+    header > * {
+        display: none;
+    }
+
     nav {
         grid-area: nv;
         background-color: #0f091a;
         position: sticky;
         top: 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     nav > ul {
         list-style: none;
+        padding: 0;
 
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: space-between;
     }
 
-    nav > ul > li {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+    nav > #logga {
+        padding-top: 4px;
+        margin-left: 2.6em;
     }
 
+    nav > #logga > img {
+        height: 2.2rem;
+        padding: 0.15em;
+        border: whitesmoke 0.1em solid;
+        border-radius: 0.2em;
+    }
 
-    nav > ul > li > * {
-        display: inline-block;
-        padding: 15px 30px;
+    nav > ul > li > a {
+        display: block;
+    }
+
+    nav > ul > li > a {
+        padding: 1em 1.7em;
         white-space: nowrap;
         color: whitesmoke;
         text-decoration: none;
         text-transform: uppercase;
     }
 
-    nav > ul > li > *:hover {
+    nav > ul > li > a:hover {
         background: rgb(66, 66, 66);
     }
 
-    nav > ul > li > *:active {
+    nav > ul > li > a:active {
         background: rgb(36, 36, 36);
     }
 
@@ -116,12 +140,13 @@ footer > *{
 
         display: flex;
         justify-content: center;
+        align-content: center;
     }
 
     #a1 > ul {
         list-style: none;
-        margin-top: 30%;
-        margin-right: 20px;
+        margin-top: 30px;
+        padding: 0;
     }
 
     #a1 > ul > li {
@@ -131,79 +156,65 @@ footer > *{
     #a1 > ul > li > * {
         text-decoration: none;
         color: whitesmoke;
-        line-height: 4px;
+        line-height: 0.9em;
     }
 
     #a1 > ul > li > *:hover {
         text-decoration: none;
         color: #af82fd;
     }
-
-    #a2 {
-        grid-area: a2;
-        background-color: whitesmoke;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #a2 > figure {
-        height: 100%;
-        margin-top: 30%;
-    }
-    
-    #a2 > figure > img {
-        height: 5%;
-        width: auto;
-    }
 }
 
 /* Hem-sidan --------------------------------------------------------------- */
 
-#hem_main > * {
+.hem_main > * {
     display: flex;
     flex-wrap: wrap;
-    margin: 3% 12% 3% 12%;
+    align-items: baseline;
+    margin: 1.3em 5rem 5em 5rem;
+    max-width: 70ch;
 }
 
-#hem_main > h1, #hem_main > h2 {
-    margin-top: 8%;
+.hem_main > h1, .hem_main > h2 {
+    margin-top: 2em;
+    margin-bottom: 1.3em;
+}
+
+.hem_a2 > figure {
+    height: 100%;
+    margin-top: 10rem;
+}
+
+.hem_a2 > figure > img {
+    height: 10em;
+    width: auto;
 }
 
 /* Andra-sidan --------------------------------------------------------------- */
 
-
 /* Tredje-sidan --------------------------------------------------------------- */
-
-#sida3_main > * {
-    margin: 10% 0% 10% 20%;
-}
-
-#sida3_main > figure >img {
-    height: 70%;
-    width: 70%;
-}
 
 /* Fjärde-sidan --------------------------------------------------------------- */
 
 #sida4_main {
     display: flex;
     flex-wrap: wrap;
-
     align-content: center;
     justify-content: center;
-
-    padding: 14%;
+    padding: 6rem 6rem 0 6rem;
 }
 
-#sida4_main > figure > {
-    justify-content: last baseline baseline;
-} 
+#sida4_main > figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
 
 #sida4_main > figure > img {
     height: 50%;
-    border: #af82fd solid 1px;
-    box-shadow: 0px 0px 4px grey;
+    border: #af82fd solid 0.02em;
+    box-shadow: 0 0 4px grey;
 }
 
 #sida4_a2 {
@@ -216,15 +227,15 @@ footer > *{
 }
 
 #sida4_a2 > h1 {
-    margin-top: 10%;
+    margin-top: 3.5em;
 }
-
 
 #sida4_a2 > * {
     display: flex;
 
     justify-content: flex-start;
-    margin: 4% 5% 0% 0%;
+    max-width: 70ch;
+    margin: 2em 2.5em 0 0;
 }
 
 /* Femte-sidan --------------------------------------------------------------- */
@@ -241,21 +252,34 @@ footer > *{
         "hd hd"
         "mb mb"
         "mn mn"
+        "a2 a2"
         "ft ft"
         ;
     
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 5% auto auto 7%;
+        grid-template-rows: 25vh auto auto auto 30vh;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header > h1 {
+        text-transform: uppercase;
+        font-size: 2em;
+        color: whitesmoke;
+        text-shadow: 0 0 0.5em #0f091a;
     }
 
     nav {
         height: 100vh;
-        width: 50vh;
+        width: 45vh;
         background: whitesmoke;
         position: fixed;
-        right: none;
         top: 0;
-        right: -50vw;
+        right: -100vw;
         transition: right 0.3s;
         z-index: 10;
         margin: 0;
@@ -265,8 +289,12 @@ footer > *{
         display: flex;
         flex-direction: column;
 
-        margin: 10% 0;
+        margin: 1.3em 0;
         list-style: none;
+    }
+
+    nav > a {
+        display: none;
     }
 
     nav > ul > li > * {
@@ -274,9 +302,9 @@ footer > *{
         align-items: center;
         color: #7F52CD;
         text-decoration: none;
-        font-size: 150%;
-        margin: 10% 10% 10% 0;
-        padding-bottom: 5%;
+        font-size: 1.4em;
+        margin: 1.1em 1.1em 1.1em 0;
+        padding-bottom: 0.525em;
         border-bottom: #7F52CD solid 1px;
     }
 
@@ -293,20 +321,35 @@ footer > *{
         grid-area: mb;
         position: sticky;
         top: 0;
+        background-color: #0f091a;
+    }
+
+    .meny_knapp > .meny_knapp_lista {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .meny_knapp > .meny_knapp_lista > #logga_mobil {
+        padding-top: 4px;
+        margin-left: 2.6em;
+    }
+
+    .meny_knapp > .meny_knapp_lista > #logga_mobil > img {
+        height: 2.2rem;
+        padding: 0.15em;
+        border: whitesmoke 0.1em solid;
+        border-radius: 0.2em;
+    }
+
+    .meny_knapp > .meny_knapp_lista > i {
         cursor: pointer;
         color: whitesmoke;
-        background-color: #0f091a;
-        padding: 0.7% 0;
-
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .meny_knapp > * {
-        margin-right: 1%;
+        padding: 0.25em 0;
+        margin-right: 0.15em;
     }
     
-    .meny_knapp i.material-icons {
+    .meny_knapp_lista i.material-icons {
         font-size: 2.5rem;
     }
     
@@ -329,7 +372,26 @@ footer > *{
         display: none;
     }
 
-    #a2 {
-        display: none;
+    .a2 {
+        grid-area: a2;
+    }
+
+    #sida4_a2 {
+        grid-area: a2;
+        background-color: whitesmoke;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    #sida4_a2 > * {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 5rem 7rem 5rem;
+        max-width: 70ch;
+    }
+    
+    #sida4_a2 > h1 {
+        margin-bottom: 2em;
     }
 }
