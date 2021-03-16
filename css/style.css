@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
+/*
+fråga om innehållet och bilderna
+minify 
+bilder
+cloor checker
+varify
+kolla browser
+skriv om allt jag gjort
+testa på telefon
+*/
 * {
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
@@ -20,14 +30,35 @@ header {
 main {
     grid-area: mn;
     background-color: whitesmoke;
+    color: #0f091a;
 } 
 
-.a2 {
-    grid-area: a2;
+.color {
+    background-color: pink;
+}
+
+.to_top {
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    z-index: 2;
+    border: #0f091a 0.2em solid;
+    border-radius: 0.4em;
+
+    height: 10%;
+    color: whitesmoke;
     background-color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0.2em;
+    transition: display 0.5s;
+}
+
+.to_top:hover {
+    background: rgb(209, 209, 209);
+    cursor: pointer;
+}
+
+.to_top_knapp {
+    display: none;
 }
 
 footer {
@@ -41,26 +72,26 @@ footer {
     flex-direction: column;
 }
 
-footer > *{
+footer > * {
     margin: auto;
 }
 
-/* Storskräm --------------------------------------------------------------- */
+/* Hem-sidan --------------------------------------------------------------- */
 
 @media screen and (min-width: 1024px) {
-    #wrapper {
+    #wrapper_hem {
         display: grid;
         height: 100%;
         width: 100%;
     
         grid-template-areas:
-        "hd hd hd hd hd hd"
-        "nv nv nv nv nv nv"
-        "a1 mn mn mn a2 a2"
-        "ft ft ft ft ft ft"
+        "hd hd hd"
+        "nv nv nv"
+        "a1 mn a2"
+        "ft ft ft"
         ;
     
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: auto 49vw 33vw;
         grid-template-rows: 35vh auto auto 30vh;
     }
 
@@ -163,87 +194,14 @@ footer > *{
         text-decoration: none;
         color: #af82fd;
     }
+
+    .fade_layer {
+        display: none;
+    }
 }
 
-/* Hem-sidan --------------------------------------------------------------- */
-
-.hem_main > * {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    margin: 1.3em 5rem 5em 5rem;
-    max-width: 70ch;
-}
-
-.hem_main > h1, .hem_main > h2 {
-    margin-top: 2em;
-    margin-bottom: 1.3em;
-}
-
-.hem_a2 > figure {
-    height: 100%;
-    margin-top: 10rem;
-}
-
-.hem_a2 > figure > img {
-    height: 10em;
-    width: auto;
-}
-
-/* Andra-sidan --------------------------------------------------------------- */
-
-/* Tredje-sidan --------------------------------------------------------------- */
-
-/* Fjärde-sidan --------------------------------------------------------------- */
-
-#sida4_main {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    padding: 6rem 6rem 0 6rem;
-}
-
-#sida4_main > figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: baseline;
-    align-items: center;
-}
-
-#sida4_main > figure > img {
-    height: 50%;
-    border: #af82fd solid 0.02em;
-    box-shadow: 0 0 4px grey;
-}
-
-#sida4_a2 {
-    grid-area: a2;
-    background-color: whitesmoke;
-    
-    display: flex;
-    flex-direction: column;
-    align-content: stretch;
-}
-
-#sida4_a2 > h1 {
-    margin-top: 3.5em;
-}
-
-#sida4_a2 > * {
-    display: flex;
-
-    justify-content: flex-start;
-    max-width: 70ch;
-    margin: 2em 2.5em 0 0;
-}
-
-/* Femte-sidan --------------------------------------------------------------- */
-
-
-/* Litenskräm --------------------------------------------------------------- */
 @media screen and (max-width: 1024px) {
-    #wrapper {
+    #wrapper_hem {
         display: grid;
         height: 100%;
         width: 100%;
@@ -259,6 +217,217 @@ footer > *{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 25vh auto auto auto 30vh;
     }
+}
+
+.hem_a2 {
+    grid-area: a2;
+    background-color: whitesmoke;
+    color: #0f091a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hem_main > * {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: 1.3em 5rem 5em 5rem;
+    max-width: 70ch;
+}
+
+.hem_main > h1, .hem_main > h2 {
+    margin-top: 2em;
+    margin-bottom: 1.3em;
+}
+
+.hem_a2 {
+    padding: 5rem;
+}
+
+.hem_a2 > figure {
+    height: 100%;
+}
+
+.hem_a2 > figure > img {
+    height: 10em;
+    width: auto;
+}
+
+/* Andra-sidan --------------------------------------------------------------- */
+
+@media screen and (min-width: 1024px) {
+    #wrapper_sida2 {
+        display: grid;
+        height: 100%;
+        width: 100%;
+    
+        grid-template-areas:
+        "hd hd hd"
+        "nv nv nv"
+        "a1 mn mn"
+        "ft ft ft"
+        ;
+    
+        grid-template-columns: auto 49vw 33vw;
+        grid-template-rows: 35vh auto auto 30vh;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #wrapper_sida2 {
+        display: grid;
+        height: 100%;
+        width: 100%;
+    
+        grid-template-areas:
+        "hd hd"
+        "mb mb"
+        "mn mn"
+        "ft ft"
+        ;
+    
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 25vh auto auto 30vh;
+    }
+
+    .sida2_main > figure > img {
+        height: auto;
+        width: auto;
+    }
+}
+
+.sida2_main {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.sida2_main > figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sida2_main > figure > img {
+    height: 110%;
+    width: auto;
+
+    border: #af82fd solid 0.02em;
+    box-shadow: 0 0 4px grey;
+}
+
+    /* Tredje-sidan --------------------------------------------------------------- */
+
+@media screen and (min-width: 1024px) {
+    #wrapper_sida3 {
+        display: grid;
+        height: 100%;
+        width: 100%;
+    
+        grid-template-areas:
+        "hd hd hd"
+        "nv nv nv"
+        "a1 s1 r1"
+        "a1 s2 r2"
+        "a1 s3 r3"
+        "ft ft ft"
+        ;
+    
+        grid-template-columns: auto 49vw 33vw;
+        grid-template-rows: 35vh auto auto auto auto 30vh;
+    }
+
+    .sida3_s1 {
+        grid-area: s1;
+    }
+
+    .sida3_s2 {
+        grid-area: s2;
+    }
+
+    .sida3_s3 {
+        grid-area: s3;
+    }
+
+    .sida3_r1 {
+        grid-area: r1;
+    }
+
+    .sida3_r2 {
+        grid-area: r2;
+    }
+
+    .sida3_r3 {
+        grid-area: r3;
+    }
+}
+
+.sida3_a2 > figure {
+    height: 100%;
+    margin-top: 10rem;
+}
+
+.sida3_a2 > figure > img {
+    height: 12em;
+    width: auto;
+}
+
+    /* Fjärde-sidan --------------------------------------------------------------- */
+
+.sida4_main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 6rem 6rem 2rem 6rem;
+}
+
+.sida4_main > figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 200px;
+    max-height: 254px;
+}
+
+.sida4_main > figure > img {
+    height: 50%;
+    border: #af82fd solid 0.02em;
+    box-shadow: 0 0 4px grey;
+}
+
+.sida4_a2 {
+    grid-area: a2;
+    background-color: whitesmoke;
+    
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+}
+
+.sida4_a2 > h1 {
+    margin-top: 3.5em;
+}
+
+.sida4_a2 > * {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 70ch;
+    margin: 2em 2.5em 0 0;
+}
+
+.sida4_a2 > iframe {
+    margin: 2em 0 4em 0;
+}
+
+/* Femte-sidan --------------------------------------------------------------- */
+
+/* Litenskräm --------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+
 
     header {
         display: flex;
@@ -372,11 +541,23 @@ footer > *{
         display: none;
     }
 
+    .sida2_main {
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        height: 50rem;
+        width: auto;
+    }
+
+    .sida2_main > figure > img {
+        max-width: 100%;
+    }
+
     .a2 {
         grid-area: a2;
     }
 
-    #sida4_a2 {
+    .sida4_a2 {
         grid-area: a2;
         background-color: whitesmoke;
         display: flex;
@@ -384,14 +565,54 @@ footer > *{
         align-items: baseline;
     }
 
-    #sida4_a2 > * {
+    .sida4_a2 > * {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 5rem 7rem 5rem;
         max-width: 70ch;
     }
     
-    #sida4_a2 > h1 {
-        margin-bottom: 2em;
+    .sida4_a2 > h1 {
+        display: flex;
+        justify-content: center;
+        margin: 2em auto 1.5em auto;
+        font-size: 2em;
     }
+
+    .sida4_a2 > p {
+        margin: 2em auto 3em auto;
+    }
+
+    .sida4_a2 > iframe {
+        width: 90vw;
+        height: 70vh;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .to_top {
+        position: fixed;
+        bottom: 1.5em;
+        left: 1.5em;
+    }
+
 }
+
+@media screen and (max-width: 760px) {
+
+    .sida2_main > figure > img {
+        max-width: 100%;
+    }
+
+    .sida4_a2 > h1 {
+        margin: 2em 2rem 1.5em 2rem;
+    }
+
+    .sida4_a2 > p {
+        margin: 2em 2rem 3em 2rem;
+    }
+
+    .sida4_a2 > iframe {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+} 
