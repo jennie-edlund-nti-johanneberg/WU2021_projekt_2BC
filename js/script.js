@@ -1,5 +1,5 @@
-document.querySelector(".meny_knapp").addEventListener("click", showMeny)
-document.querySelector(".fade_layer").addEventListener("click", showMeny)
+document.querySelector(".meny_knapp").addEventListener("click", showMeny);
+document.querySelector(".fade_layer").addEventListener("click", showMeny);
 document.addEventListener("scroll", handleScroll);
 document.querySelector(".to_top_knapp").addEventListener("click", scrollToTop);
 
@@ -21,5 +21,5 @@ function handleScroll() {
 }
 
 function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
