@@ -1,17 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 /*
-nav i mobil inte i top 
-bilder ---
-cloor checker ---
-chrome lighthouse ---
-flytt validate
-validate ---
-kolla browser ---
-testa på telefon ---
-minify ---
-kolla kunskapskrav
-Skisser ---
+puch origin
 */
 
 * {
@@ -235,7 +225,7 @@ footer > * {
 
     nav {
         height: 100vh;
-        width: 45vh;
+        width: 45vw;
         background: #f5f5f5;
         position: fixed;
         top: 0;
@@ -305,7 +295,7 @@ footer > * {
     .meny_knapp > .meny_knapp_lista > i {
         cursor: pointer;
         color: #f5f5f5;
-        padding: 0.25em 0;
+        margin: 0.25em 0;
         margin-right: 0.15em;
     }
     
@@ -351,7 +341,7 @@ footer > * {
     flex-wrap: wrap;
     align-items: baseline;
     margin: 1.3em 5rem 5em 5rem;
-    max-width: 70ch;
+    max-width: 65ch;
 }
 
 .hem_main > div > h2 {
@@ -529,7 +519,7 @@ footer > * {
     flex-wrap: wrap;
     align-items: baseline;
     margin: 1em 5rem 3em 5rem;
-    max-width: 70ch;
+    max-width: 65ch;
 }
 
 .sida3_s1 > div > h2 {
@@ -557,7 +547,7 @@ footer > * {
     flex-wrap: wrap;
     align-items: baseline;
     margin: 1.3em 5rem 5em 5rem;
-    max-width: 70ch;
+    max-width: 65ch;
 }
 
 .sida3_s2 > div > h3 {
@@ -579,7 +569,7 @@ footer > * {
     flex-wrap: wrap;
     align-items: baseline;
     margin: 1.3em 5rem 5em 5rem;
-    max-width: 70ch;
+    max-width: 65ch;
 }
 
 .sida3_s3 > div > h3 {
@@ -662,7 +652,7 @@ footer > * {
     .sida4_a2 > div > * {
         display: flex;
         justify-content: flex-start;
-        max-width: 70ch;
+        max-width: 65ch;
         margin: 2em 2.5em 0 0;
     }
 }
@@ -680,7 +670,7 @@ footer > * {
     .sida4_a2 > div > * {
         display: flex;
         justify-content: flex-start;
-        max-width: 70ch;
+        max-width: 65ch;
         width: 85%;
         margin: 2em 2.5em 0 0;
     }
@@ -791,7 +781,7 @@ footer > * {
     flex-wrap: wrap;
     align-items: baseline;
     margin: 1.3em 5rem 5em 5rem;
-    max-width: 70ch;
+    max-width: 65ch;
 }
 
 .sida5_s1 > div > h2 {
